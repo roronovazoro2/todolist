@@ -1,0 +1,158 @@
+:root {
+    --dark-bg: #131316;
+    --dark-container: #1c1c21;
+    --dark-input: #26262c;
+    --dark-text: #f4f4f4;
+    --dark-border: #393a41;
+    --light-bg: #caf0f8;
+    --light-container: #90e0ef;
+    --light-input: #00b4d8;
+    --light-text: #03045e;
+    --light-border: #0077b6;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--light-bg);
+    color: var(--light-text);
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: var(--light-container);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+}
+
+.task-input {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.task-input input[type="text"],
+.task-input textarea,
+.task-input select {
+    padding: 10px;
+    border: 1px solid var(--light-border);
+    border-radius: 4px;
+    background-color: var(--light-input);
+    color: var(--light-text);
+}
+
+.task-input button {
+    padding: 10px 15px;
+    border: none;
+    background-color: var(--light-border);
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.task-input button:hover {
+    background-color: var(--light-text);
+    color: var(--light-bg);
+}
+
+.task-list {
+    list-style: none;
+    padding: 0;
+}
+
+.task-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid var(--light-border);
+}
+
+.task-list li.completed {
+    text-decoration: line-through;
+    color: #888;
+}
+
+.task-list button {
+    background-color: var(--light-border);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.task-list button:hover {
+    background-color: var(--light-text);
+    color: var(--light-bg);
+}
+
+#theme-toggle {
+    margin-bottom: 20px;
+    padding: 10px 15px;
+    border: none;
+    background-color: var(--light-border);
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#theme-toggle:hover {
+    background-color: var(--light-text);
+    color: var(--light-bg);
+}
+
+body.dark {
+    background-color: var(--dark-bg);
+    color: var(--dark-text);
+}
+
+body.dark .container {
+    background: var(--dark-container);
+}
+
+body.dark .task-input input[type="text"],
+body.dark .task-input textarea,
+body.dark .task-input select {
+    background-color: var(--dark-input);
+    color: var(--dark-text);
+    border: 1px solid var(--dark-border);
+}
+
+body.dark .task-input button,
+body.dark #theme-toggle {
+    background-color: var(--dark-border);
+}
+
+body.dark .task-input button:hover,
+body.dark #theme-toggle:hover {
+    background-color: var(--dark-text);
+    color: var(--dark-bg);
+}
+
+body.dark .task-list li {
+    border-bottom: 1px solid var(--dark-border);
+}
+
+body.dark .task-list button {
+    background-color: var(--dark-border);
+}
+
+body.dark .task-list button:hover {
+    background-color: var(--dark-text);
+    color: var(--dark-bg);
+}
+
+@media (max-width: 600px) {
+    .task-input {
+        flex-direction: column;
+    }
+}
